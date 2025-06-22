@@ -30,6 +30,7 @@ class os_data(enum.IntEnum):
     ventura =       22
     sonoma =        23
     sequoia =       24
+    tahoe =         25
     max_os =        99
 
 
@@ -45,8 +46,9 @@ class os_conversion:
         Returns:
             int: Major XNU version
         """
-        if os.startswith("10."):
+        if os.startswith("10.") or os.startswith("26."):
             return (int(os.split(".")[1]) + 4)
+            
         else:
             return (int(os.split(".")[0]) + 9)
 
