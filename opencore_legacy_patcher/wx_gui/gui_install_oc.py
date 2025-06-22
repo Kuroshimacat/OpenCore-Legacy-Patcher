@@ -1,6 +1,5 @@
 """
 gui_install_oc.py: Frame for installing OpenCore to disk
-miao
 """
 
 import wx
