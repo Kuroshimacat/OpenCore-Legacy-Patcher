@@ -25,7 +25,7 @@ jobs:
 
       - name: Install PyInstaller
         run: |
-          pip install pyinstaller requests pyobjc wxpython pyinstaller packaging py_sip_xnu py-applescript markdown2 macos-pkg-builder mac-signing-buddy
+          pip install pyinstaller requests pyobjc wxpython pyinstaller packaging py_sip_xnu py-applescript markdown2 macos-pkg-builder mac-signing-buddy packaging
 
       - name: Create the pyinstaller based Application
         run: |
