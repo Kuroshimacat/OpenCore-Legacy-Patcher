@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Checkout code from specified repository
         run: |
-          git clone https://github.com/xxxt/OpenCore-Legacy-Patcher.git ~/Developer/OpenCore-Legacy-Patcher
+          git clone https://github.com/Kuroshimacat/OpenCore-Legacy-Patcher.git ~/Developer/OpenCore-Legacy-Patcher
           cd ~/Developer/OpenCore-Legacy-Patcher
 
       - name: Create and activate virtual environment
