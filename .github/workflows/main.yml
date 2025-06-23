@@ -16,12 +16,12 @@ jobs:
       - name: Checkout code from specified repository
         run: |
           git clone https://github.com/Kuroshimacat/OpenCore-Legacy-Patcher.git ~/Developer/OpenCore-Legacy-Patcher
+          cd ~/Developer/OpenCore-Legacy-Patcher
 
       - name: Create and activate virtual environment
         run: |
           python3 -m venv venv
           source venv/bin/activate
-        working-directory: ~/Developer/OpenCore-Legacy-Patcher
 
       - name: Install PyInstaller
         run: |
