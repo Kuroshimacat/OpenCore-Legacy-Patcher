@@ -18,14 +18,21 @@ jobs:
           git clone https://github.com/Kuroshimacat/OpenCore-Legacy-Patcher.git ~/Developer/OpenCore-Legacy-Patcher
           cd ~/Developer/OpenCore-Legacy-Patcher
 
-      - name: Install dependencies
-        run: pip3 install -r requirements.txt
+      - name: Install pipx
+        run: |
+          brew install pipx
+
+      - name: Install dependencies using pipx
+        run: |
+          pipx install --include-deps --force requirements.txt
 
       - name: Install PyInstaller
-        run: pip3 install pyinstaller
+        run: |
+          pipx install pyinstaller
 
       - name: Create the pyinstaller based Application
-        run: python3 Build-Project.command
+        run: |
+          python3 Build-Project.command
 
       - name: Upload OpenCore-Patcher.app as an artifact
         uses: actions/upload-artifact@v4
