@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Checkout code from specified repository
         run: |
-          git clone https://github.com/Kuroshimacat/OpenCore-Legacy-Patcher.git ~/Developer/OpenCore-Legacy-Patcher
+          git clone https://github.com/xxxt/OpenCore-Legacy-Patcher.git ~/Developer/OpenCore-Legacy-Patcher
           cd ~/Developer/OpenCore-Legacy-Patcher
 
       - name: Install dependencies
@@ -28,7 +28,7 @@ jobs:
         run: python3 Build-Project.command
 
       - name: Upload OpenCore-Patcher.app as an artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: OpenCore-Patcher
           path: ~/Developer/OpenCore-Legacy-Patcher/dist/OpenCore-Patcher.app
