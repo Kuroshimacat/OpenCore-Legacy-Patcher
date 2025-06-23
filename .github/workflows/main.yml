@@ -25,8 +25,17 @@ jobs:
 
       - name: Install PyInstaller
         run: |
-          pip install pyinstaller requests pyobjc wxpython pyinstaller packaging py_sip_xnu py-applescript markdown2 macos-pkg-builder mac-signing-buddy packaging
-
+          pip install pyinstaller
+          pip install requests
+          pip install pyobjc
+          pip install wxpython
+          pip install pyinstaller
+          pip install packaging
+          pip install py_sip_xnu
+          pip install py-applescript
+          pip install markdown2
+          pip install macos-pkg-builder
+          pip install mac-signing-buddy
       - name: Create the pyinstaller based Application
         run: |
           cd /Users/runner/Developer/OpenCore-Legacy-Patcher
