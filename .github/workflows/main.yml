@@ -1,0 +1,34 @@
+name: Build and Upload OpenCore-Patcher.app
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout code from specified repository
+        run: |
+          git clone https://github.com/Kuroshimacat/OpenCore-Legacy-Patcher.git ~/Developer/OpenCore-Legacy-Patcher
+          cd ~/Developer/OpenCore-Legacy-Patcher
+
+      - name: Install dependencies
+        run: pip3 install -r requirements.txt
+
+      - name: Install PyInstaller
+        run: pip3 install pyinstaller
+
+      - name: Create the pyinstaller based Application
+        run: python3 Build-Project.command
+
+      - name: Upload OpenCore-Patcher.app as an artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: OpenCore-Patcher
+          path: ~/Developer/OpenCore-Legacy-Patcher/dist/OpenCore-Patcher.app
