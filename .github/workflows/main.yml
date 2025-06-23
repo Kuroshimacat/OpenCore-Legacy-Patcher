@@ -22,11 +22,11 @@ jobs:
         run: |
           brew install pipx
 
-      - name: Install dependencies using pipx
+      - name: Install dependencies using pip
         run: |
-          pipx install --include-deps --force requirements.txt
+          python3 -m pip install --user -r requirements.txt
 
-      - name: Install PyInstaller
+      - name: Install PyInstaller using pipx
         run: |
           pipx install pyinstaller
 
