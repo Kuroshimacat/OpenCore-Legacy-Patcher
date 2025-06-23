@@ -29,7 +29,8 @@ jobs:
 
       - name: Create the pyinstaller based Application
         run: |
-          cd /Users/runner/work/OpenCore-Legacy-Patcher
+          cd /Users/runner/work/OpenCore-Legacy-
+          ls
           python3 Build-Project.command
 
       - name: Upload OpenCore-Patcher.app as an artifact
