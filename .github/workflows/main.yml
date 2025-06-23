@@ -30,7 +30,6 @@ jobs:
           pip install markdown2
           pip install macos-pkg-builder
           pip install mac-signing-buddy
-          pyinstaller --target-arch=x86_64 OpenCore-Patcher-GUI.spec
           python3 Build-Project.command
 
       - name: Upload OpenCore-Patcher.app as an artifact
