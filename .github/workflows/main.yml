@@ -16,15 +16,9 @@ jobs:
       - name: Checkout code from specified repository
         run: |
           git clone https://github.com/Kuroshimacat/OpenCore-Legacy-Patcher.git ~/Developer/OpenCore-Legacy-Patcher
-          cd ~/Developer/OpenCore-Legacy-Patcher
-
-      - name: Create and activate virtual environment
-        run: |
+          cd /Users/runner/Developer/OpenCore-Legacy-Patcher
           python3 -m venv venv
           source venv/bin/activate
-
-      - name: Install PyInstaller
-        run: |
           pip install pyinstaller
           pip install requests
           pip install pyobjc
@@ -36,10 +30,6 @@ jobs:
           pip install markdown2
           pip install macos-pkg-builder
           pip install mac-signing-buddy
-      - name: Create the pyinstaller based Application
-        run: |
-          cd /Users/runner/Developer/OpenCore-Legacy-Patcher
-          ls
           python3 Build-Project.command
 
       - name: Upload OpenCore-Patcher.app as an artifact
