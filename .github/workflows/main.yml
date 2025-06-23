@@ -16,24 +16,27 @@ jobs:
       - name: Checkout code from specified repository
         run: |
           git clone https://github.com/Kuroshimacat/OpenCore-Legacy-Patcher.git ~/Developer/OpenCore-Legacy-Patcher
-          cd ~/Developer/OpenCore-Legacy-Patcher
 
       - name: Create and activate virtual environment
         run: |
           python3 -m venv venv
           source venv/bin/activate
+        working-directory: ~/Developer/OpenCore-Legacy-Patcher
 
       - name: Install dependencies using pip
         run: |
           pip install -r requirements.txt
+        working-directory: ~/Developer/OpenCore-Legacy-Patcher
 
       - name: Install PyInstaller
         run: |
           pip install pyinstaller
+        working-directory: ~/Developer/OpenCore-Legacy-Patcher
 
       - name: Create the pyinstaller based Application
         run: |
           python3 Build-Project.command
+        working-directory: ~/Developer/OpenCore-Legacy-Patcher
 
       - name: Upload OpenCore-Patcher.app as an artifact
         uses: actions/upload-artifact@v4
