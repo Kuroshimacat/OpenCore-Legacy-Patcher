@@ -29,7 +29,7 @@ jobs:
 
       - name: Create the pyinstaller based Application
         run: |
-          cd /Users/runner/work/OpenCore-Legacy-
+          cd /Users/runner/Developer/OpenCore-Legacy-Patcher
           ls
           python3 Build-Project.command
 
