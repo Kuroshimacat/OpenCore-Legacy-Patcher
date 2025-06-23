@@ -23,20 +23,13 @@ jobs:
           source venv/bin/activate
         working-directory: ~/Developer/OpenCore-Legacy-Patcher
 
-      - name: Install dependencies using pip
-        run: |
-          pip install -r requirements.txt
-        working-directory: ~/Developer/OpenCore-Legacy-Patcher
-
       - name: Install PyInstaller
         run: |
-          pip install pyinstaller
-        working-directory: ~/Developer/OpenCore-Legacy-Patcher
+          pip install pyinstaller requests pyobjc wxpython pyinstaller packaging py_sip_xnu py-applescript markdown2 macos-pkg-builder mac-signing-buddy
 
       - name: Create the pyinstaller based Application
         run: |
           python3 Build-Project.command
-        working-directory: ~/Developer/OpenCore-Legacy-Patcher
 
       - name: Upload OpenCore-Patcher.app as an artifact
         uses: actions/upload-artifact@v4
